@@ -58,9 +58,9 @@
     "validator": "13.6.0"
   },
   "devDependencies": {
-    "chai": "3.4.0",
+    "chai": "4.3.4",
     "mocha": "^5.2.0",
-    "should": "7.1.1",
+    "should": "13.2.3",
     "supertest": "1.1.0"
   },
   "scripts": {
