@@ -83,7 +83,7 @@ module.exports = function hook(sails) {
                     // for simplicity.
                     // After all, it's not like they're
                     // going to use it again.
-                    var uuidv4 = require('uuid/v4');
+                    var { v4: uuidv4 } = require('uuid');
 
                     sails.models.user
                         .update({
