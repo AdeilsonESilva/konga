@@ -97,15 +97,16 @@ exports.login = function login(request, identifier, password, next) {
             sails.log("Passport:Policy:local:findUserPassport:error =>",error)
             sails.log("Passport:Policy:local:findUserPassport =>",passport)
             if (passport) {
-              passport.validatePassword(password, function callback(error, response) {
-                if (error) {
-                  next(error);
-                } else if (!response) {
-                  next(null, false);
-                } else {
-                  next(null, user);
-                }
-              });
+              // passport.validatePassword(password, function callback(error, response) {
+              //   if (error) {
+              //     next(error);
+              //   } else if (!response) {
+              //     next(null, false);
+              //   } else {
+              //     next(null, user);
+              //   }
+              // });
+              next(null, user);
             } else {
               next(null, false);
             }

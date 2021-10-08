@@ -10,11 +10,11 @@ var _ = require('lodash');
  */
 var defaultModel = _.merge(_.cloneDeep(require('../base/Model')), {
     tableName: "konga_kong_snapshots",
-    autoPK: false,
+    // autoPK: false,
     attributes: {
         id: {
             type: 'integer',
-            primaryKey: true,
+            // primaryKey: true,
             unique: true,
             autoIncrement: true
         },

@@ -20,14 +20,14 @@ var _ = require('lodash');
 var defaultModel = {
   schema: true,
   tableName : "konga_passports",
-  autoPK : false,
+  // autoPK : false,
 
   attributes: {
 
 
     id : {
       type: 'integer',
-      primaryKey: true,
+      // primaryKey: true,
       unique: true,
       autoIncrement : true
     },
@@ -41,7 +41,7 @@ var defaultModel = {
      * party service (e.g. 'oauth', 'oauth2', 'openid').
      */
     protocol: {
-      type: 'alphanumeric',
+      type: 'string',
       required: true
     },
 
@@ -70,7 +70,7 @@ var defaultModel = {
      * and a `refreshToken` will be issued.
      */
     provider: {
-      type: 'alphanumericdashed'
+      type: 'string'
     },
 
     identifier: {
@@ -94,15 +94,15 @@ var defaultModel = {
       model: 'User'
     },
 
-    /**
-     * Validate password used by the local strategy.
-     *
-     * @param   {string}    password    The password to validate
-     * @param   {Function}  next
-     */
-    validatePassword: function validatePassword(password, next) {
-      bcrypt.compare(password, this.password, next);
-    }
+    // /**
+    //  * Validate password used by the local strategy.
+    //  *
+    //  * @param   {string}    password    The password to validate
+    //  * @param   {Function}  next
+    //  */
+    // validatePassword: function validatePassword(password, next) {
+    //   bcrypt.compare(password, this.password, next);
+    // }
   },
 
   /**

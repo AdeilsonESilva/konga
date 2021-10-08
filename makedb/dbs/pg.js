@@ -4,10 +4,11 @@
 
 'use strict'
 
-var pg = require("../../node_modules/sails-postgresql/node_modules/pg");
-var dbConf = require("../../config/connections");
+var pgImport = require("pg");
+var dbConf = require("../../config/datastores");
 var _ = require("lodash");
 var url = require('url');
+var pg;
 
 //Parse method copied from https://github.com/brianc/node-postgres
 //Copyright (c) 2010-2014 Brian Carlson (brian.m.carlson@gmail.com)
@@ -64,26 +65,49 @@ module.exports = {
     console.log("Using postgres DB Adapter.");
 
     var self     = this;
-    var url      = dbConf.connections.postgres.url;
-    var user     = dbConf.connections.postgres.user;
-    var password = dbConf.connections.postgres.password;
-    var dbName   = dbConf.connections.postgres.database;
-    var dbHost   = dbConf.connections.postgres.host;
-    var dbPort   = dbConf.connections.postgres.port;
-    var ssl      = dbConf.connections.postgres.ssl;
+    // var url      = dbConf.datastores.postgres.url;
+    // var user     = dbConf.datastores.postgres.user;
+    // var password = dbConf.datastores.postgres.password;
+    // var dbName   = dbConf.datastores.postgres.database;
+    // var dbHost   = dbConf.datastores.postgres.host;
+    // var dbPort   = dbConf.datastores.postgres.port;
+    // var ssl      = dbConf.datastores.postgres.ssl;
 
-    var opts = url ? parse(url) : {
-      user: user,
-      host: dbHost,
-      database: dbName,
-      password: password,
-      port: dbPort,
-      ssl,
+    // var opts = url ? parse(url) : {
+    //   user: user,
+    //   host: dbHost,
+    //   database: dbName,
+    //   password: password,
+    //   port: dbPort,
+    //   ssl,
+    // }
+
+      //   adapter: 'sails-postgresql',
+      //   url: process.env.DB_URI,
+      //   host: process.env.DB_HOST || 'localhost',
+      //   user:  process.env.DB_USER || 'postgres',
+      //   password: process.env.DB_PASSWORD || 'admin1!',
+      //   port: process.env.DB_PORT || 54322,
+      //   database: process.env.DB_DATABASE ||'konga_database',
+      //   // schema: process.env.DB_PG_SCHEMA ||'public',
+      //   poolSize: process.env.DB_POOLSIZE || 10,
+      //   ssl: process.env.DB_SSL ? true : false // If set, assume it's true
+    
+    var opts = {
+      user: 'kong',
+      host: 'localhost',
+      database: 'kong',
+      password: 'kong',
+      port: 5432,
+      ssl: false,
     }
 
     // console.log("Connection Options =>", opts);
 
-    pg.connect(opts, function (err, client, done) {
+    pg = new pgImport.Client(opts);
+    console.log(`opts`, opts)
+
+    pg.connect(function (err, client, done) {
       if (err) {
 
         if(err.code == "3D000")

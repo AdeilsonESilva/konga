@@ -11,11 +11,11 @@ var HealthCheckEvents = require("../events/upstream-health-checks");
  */
 var defaultModel = _.merge(_.cloneDeep(require('../base/Model')), {
   tableName : "konga_kong_upstream_alerts",
-  autoPK : false,
+  // autoPK : false,
   attributes: {
     id : {
       type: 'integer',
-      primaryKey: true,
+      // primaryKey: true,
       unique: true,
       autoIncrement : true
     },

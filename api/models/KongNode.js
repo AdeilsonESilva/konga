@@ -12,11 +12,11 @@ var defSeedData = require('../../config/default-seed-data.js');
  */
 var defaultModel = _.merge(_.cloneDeep(require('../base/Model')), {
   tableName: "konga_kong_nodes",
-  autoPK: false,
+  // autoPK: false,
   attributes: {
     id: {
       type: 'integer',
-      primaryKey: true,
+      // primaryKey: true,
       unique: true,
       autoIncrement: true
     },
@@ -80,7 +80,7 @@ var defaultModel = _.merge(_.cloneDeep(require('../base/Model')), {
 
     kong_version: {
       type: 'string',
-      required: true,
+      // required: true,
       defaultsTo: '0-10-x'
     },
     health_checks: {
@@ -92,7 +92,7 @@ var defaultModel = _.merge(_.cloneDeep(require('../base/Model')), {
     },
     active: {
       type: 'boolean',
-      required: true,
+      // required: true,
       defaultsTo: false
     }
   },

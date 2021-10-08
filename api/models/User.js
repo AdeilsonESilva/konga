@@ -14,11 +14,11 @@ var defSeedData = require('../../config/default-seed-data.js');
 
 var defaultModel = _.merge(_.cloneDeep(require('../base/Model')), {
   tableName: "konga_users",
-  autoPK: false,
+  // autoPK: false,
   attributes: {
     id: {
       type: 'integer',
-      primaryKey: true,
+      // primaryKey: true,
       unique: true,
       autoIncrement: true
     },
@@ -28,7 +28,7 @@ var defaultModel = _.merge(_.cloneDeep(require('../base/Model')), {
       required: true
     },
     email: {
-      type: 'email',
+      type: 'string',
       unique: true,
       required: true
     },

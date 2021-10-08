@@ -14,13 +14,7 @@ var async = require("async");
  * http://sailsjs.org/#/documentation/concepts/ORM
  */
 module.exports.models = {
-    /***************************************************************************
-     *                                                                          *
-     * Your app's default connection. i.e. the name of one of your app's        *
-     * connections (see `config/connections.js`)                                *
-     *                                                                          *
-     ***************************************************************************/
-    connection: process.env.DB_ADAPTER || 'localDiskDb',
+    datastore: process.env.DB_ADAPTER || 'default',
     migrate: 'alter',
 
     updateOrCreate: function(criteria, values, cb){

@@ -11,11 +11,11 @@ var HealthCheckEvents = require("../events/api-health-checks")
  */
 var defaultModel = _.merge(_.cloneDeep(require('../base/Model')), {
   tableName : "konga_api_health_checks",
-  autoPK : false,
+  // autoPK : false,
   attributes: {
     id : {
       type: 'integer',
-      primaryKey: true,
+      // primaryKey: true,
       unique: true,
       autoIncrement : true
     },
@@ -73,7 +73,7 @@ var defaultModel = _.merge(_.cloneDeep(require('../base/Model')), {
 
 var mongoModel = function() {
   var obj = _.cloneDeep(defaultModel)
-  delete obj.autoPK
+  // delete obj.autoPK
   delete obj.attributes.id
   return obj;
 }

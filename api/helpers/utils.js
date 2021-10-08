@@ -80,4 +80,9 @@ module.exports = {
     if(!str) return str;
     return str.replace(/\/$/, "")
   },
+
+  fn: function (inputs, exits) {
+    var result = `Hello, ${inputs.name}!`;
+    return exits.success(result);
+  }
 }

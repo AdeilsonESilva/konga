@@ -19,7 +19,7 @@ module.exports = {
    * environment (see config/connections.js and config/models.js )           *
    ***************************************************************************/
 
-  hookTimeout: process.env.KONGA_HOOK_TIMEOUT || 60000,
+  // hookTimeout: process.env.KONGA_HOOK_TIMEOUT || 60000,
 
   // kong_admin_url : process.env.KONG_ADMIN_URL || 'http://127.0.0.1:8001',
 
@@ -31,24 +31,44 @@ module.exports = {
    * Set the port in the production environment to 80                        *
    ***************************************************************************/
 
-  port: process.env.PORT || 1337,
+  // port: process.env.PORT || 1337,
 
-  host: process.env.HOST || "0.0.0.0",
+  // host: process.env.HOST || "0.0.0.0",
 
-  ssl: {
-    key: process.env.SSL_KEY_PATH ? fs.readFileSync(process.env.SSL_KEY_PATH) : null,
-    cert: process.env.SSL_CRT_PATH ? fs.readFileSync(process.env.SSL_CRT_PATH) : null
+  // ssl: {
+  //   key: process.env.SSL_KEY_PATH ? fs.readFileSync(process.env.SSL_KEY_PATH) : null,
+  //   cert: process.env.SSL_CRT_PATH ? fs.readFileSync(process.env.SSL_CRT_PATH) : null
+  // },
+
+  // /***************************************************************************
+  //  * Set the log level in production environment to "warn"                   *
+  //  ***************************************************************************/
+  // log: {
+  //     level: process.env.KONGA_LOG_LEVEL || "warn"
+  // },
+
+  // // Keep data of response errors in production mode
+  // keepResponseErrors : true
+
+
+  datastores: {
+    default: {
+      adapter: require('sails-postgresql'),
+      url: 'postgresql://kong:kong@localhost:5432/kong',
+      ssl: false
+    },
+    postgres: {
+      adapter: 'sails-postgresql',
+      url: process.env.DB_URI,
+      host: process.env.DB_HOST || 'localhost',
+      user:  process.env.DB_USER || 'postgres',
+      password: process.env.DB_PASSWORD || 'admin1!',
+      port: process.env.DB_PORT || 5432,
+      database: process.env.DB_DATABASE ||'konga_database',
+      // schema: process.env.DB_PG_SCHEMA ||'public',
+      poolSize: process.env.DB_POOLSIZE || 10,
+      ssl: process.env.DB_SSL ? true : false // If set, assume it's true
+    },
   },
-
-  /***************************************************************************
-   * Set the log level in production environment to "warn"                   *
-   ***************************************************************************/
-  log: {
-      level: process.env.KONGA_LOG_LEVEL || "warn"
-  },
-
-  // Keep data of response errors in production mode
-  keepResponseErrors : true
-
-
+  hookTimeout: 80000,
 };

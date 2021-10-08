@@ -18,7 +18,7 @@ module.exports.globals = {
    * lodash --save, then var _ = require('lodash') at the top of any file.     *
    *                                                                           *
    ****************************************************************************/
-  _: false,
+  _: require('@sailshq/lodash'),
 
   /****************************************************************************
    *                                                                           *
@@ -55,5 +55,5 @@ module.exports.globals = {
    * your models via sails.models.*.                                           *
    *                                                                           *
    ****************************************************************************/
-  models: false
+  models: true
 };
