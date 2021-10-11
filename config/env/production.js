@@ -54,11 +54,11 @@ module.exports = {
   datastores: {
     default: {
       adapter: require('sails-postgresql'),
-      url: 'postgresql://kong:kong@localhost:5432/kong',
+      url: process.env.DB_URI,
       ssl: false
     },
     postgres: {
-      adapter: 'sails-postgresql',
+      adapter: require('sails-postgresql'),
       url: process.env.DB_URI,
       host: process.env.DB_HOST || 'localhost',
       user:  process.env.DB_USER || 'postgres',
@@ -70,5 +70,5 @@ module.exports = {
       ssl: process.env.DB_SSL ? true : false // If set, assume it's true
     },
   },
-  hookTimeout: 80000,
+  hookTimeout: 800000,
 };

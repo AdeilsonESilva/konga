@@ -65,22 +65,22 @@ module.exports = {
     console.log("Using postgres DB Adapter.");
 
     var self     = this;
-    // var url      = dbConf.datastores.postgres.url;
-    // var user     = dbConf.datastores.postgres.user;
-    // var password = dbConf.datastores.postgres.password;
-    // var dbName   = dbConf.datastores.postgres.database;
-    // var dbHost   = dbConf.datastores.postgres.host;
-    // var dbPort   = dbConf.datastores.postgres.port;
-    // var ssl      = dbConf.datastores.postgres.ssl;
+    var url      = dbConf.datastores.postgres.url;
+    var user     = dbConf.datastores.postgres.user;
+    var password = dbConf.datastores.postgres.password;
+    var dbName   = dbConf.datastores.postgres.database;
+    var dbHost   = dbConf.datastores.postgres.host;
+    var dbPort   = dbConf.datastores.postgres.port;
+    var ssl      = dbConf.datastores.postgres.ssl;
 
-    // var opts = url ? parse(url) : {
-    //   user: user,
-    //   host: dbHost,
-    //   database: dbName,
-    //   password: password,
-    //   port: dbPort,
-    //   ssl,
-    // }
+    var opts = url ? parse(url) : {
+      user: user,
+      host: dbHost,
+      database: dbName,
+      password: password,
+      port: dbPort,
+      ssl,
+    }
 
       //   adapter: 'sails-postgresql',
       //   url: process.env.DB_URI,
@@ -93,19 +93,19 @@ module.exports = {
       //   poolSize: process.env.DB_POOLSIZE || 10,
       //   ssl: process.env.DB_SSL ? true : false // If set, assume it's true
     
-    var opts = {
-      user: 'kong',
-      host: 'localhost',
-      database: 'kong',
-      password: 'kong',
-      port: 5432,
-      ssl: false,
-    }
+    // var opts = {
+    //   adapter: require('sails-postgresql'),
+    //   user: 'kong',
+    //   host: 'localhost',
+    //   database: 'kong',
+    //   password: 'kong',
+    //   port: 5432,
+    //   ssl: false,
+    // }
 
     // console.log("Connection Options =>", opts);
 
     pg = new pgImport.Client(opts);
-    console.log(`opts`, opts)
 
     pg.connect(function (err, client, done) {
       if (err) {

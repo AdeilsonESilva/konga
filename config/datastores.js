@@ -13,7 +13,7 @@ module.exports.datastores = {
     // adapter: require('sails-postgresql'),
     // url: 'postgresql://kong:kong@localhost:5432/kong',
     adapter: require('sails-postgresql'),
-    url: 'postgresql://kong:kong@localhost:5432/kong',
+    url: process.env.DB_URI,
     ssl: false
   },
 

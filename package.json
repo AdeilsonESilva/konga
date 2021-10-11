@@ -50,14 +50,14 @@
     "sails-disk": "^2.1.0",
     "sails-hook-grunt": "^5.0.0",
     "sails-hook-i18n": "^0.1.2",
-    "sails-hook-orm": "^3.0.2",
-    "sails-hook-sockets": "^2.0.1",
-    "sails-mongo": "^0.12.3",
+    "sails-hook-orm": "^2.1.1",
+    "sails-hook-sockets": "^1.5.5",
+    "sails-mongo": "^1.2.0",
     "sails-mysql": "^1.0.3",
-    "sails-postgresql": "^2.0.0",
+    "sails-postgresql": "^1.0.2",
     "sails-sqlserver": "^0.10.8",
     "sendmail": "^1.6.1",
-    "socket.io-redis": "~6.1.1",
+    "socket.io-redis": "5.2.0",
     "unirest": "git+https://git@github.com/pantsel/unirest-nodejs.git#master",
     "uuid": "^8.3.2",
     "validator": "13.6.0"
@@ -75,7 +75,7 @@
     "debug": "node debug app.js",
     "test": "mocha",
     "bower-deps": "bower --allow-root install",
-    "debug2": "NODE_ENV=development node app.js"
+    "debug2": "NODE_ENV=development node --trace-warnings app.js"
   },
   "main": "app.js",
   "repository": {
