@@ -26,7 +26,7 @@ var defaultModel = {
 
 
     id : {
-      type: 'integer',
+      type: 'number',
       // primaryKey: true,
       unique: true,
       autoIncrement : true

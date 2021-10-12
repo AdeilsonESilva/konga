@@ -13,7 +13,7 @@ var defaultModel = _.merge(_.cloneDeep(require('../base/Model')), {
   // autoPK : false,
   attributes: {
     id : {
-      type: 'integer',
+      type: 'number',
       // primaryKey: true,
       unique: true,
       autoIncrement : true

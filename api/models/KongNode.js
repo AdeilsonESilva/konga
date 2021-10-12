@@ -15,7 +15,7 @@ var defaultModel = _.merge(_.cloneDeep(require('../base/Model')), {
   // autoPK: false,
   attributes: {
     id: {
-      type: 'integer',
+      type: 'number',
       // primaryKey: true,
       unique: true,
       autoIncrement: true
@@ -27,7 +27,7 @@ var defaultModel = _.merge(_.cloneDeep(require('../base/Model')), {
 
     type: {
       type: 'string',
-      enum: ['default', 'key_auth', 'jwt', 'basic_auth'],
+      isIn: ['default', 'key_auth', 'jwt', 'basic_auth'],
       defaultsTo: 'default'
     },
 
@@ -54,7 +54,7 @@ var defaultModel = _.merge(_.cloneDeep(require('../base/Model')), {
      */
     jwt_algorithm: {
       type: 'string',
-      enum: ['HS256', 'RS256'],
+      isIn: ['HS256', 'RS256'],
       defaultsTo: 'HS256'
     },
 
