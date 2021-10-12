@@ -51,5 +51,5 @@ module.exports = {
       ssl: process.env.DB_SSL ? true : false // If set, assume it's true
     },
   },
-  hookTimeout: 800000,
+  hookTimeout: 80000,
 };
