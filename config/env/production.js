@@ -51,6 +51,10 @@ module.exports = {
   // keepResponseErrors : true
 
 
+  sockets:{
+    onlyAllowOrigins: ['http://localhost:1337'],
+  },
+
   datastores: {
     default: {
       adapter: require('sails-postgresql'),
