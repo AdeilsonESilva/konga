@@ -4,7 +4,9 @@
 
 'use strict'
 
-var pgImport = require("pg");
+// var pgImport = require("pg");
+// var pg = require("../../node_modules/sails-postgresql/node_modules/pg");
+var pgImport = require("../../node_modules/machinepack-postgresql/node_modules/pg");
 var dbConf = require("../../config/datastores");
 var _ = require("lodash");
 var url = require('url');
@@ -74,6 +76,7 @@ module.exports = {
     var ssl      = dbConf.datastores.postgres.ssl;
 
     var opts = url ? parse(url) : {
+      // adapter: require('sails-postgresql'),
       user: user,
       host: dbHost,
       database: dbName,
