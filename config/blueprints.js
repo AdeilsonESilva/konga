@@ -120,7 +120,19 @@ module.exports.blueprints = {
    * may result in very heavy api calls                                       *
    *                                                                          *
    ***************************************************************************/
-  populate: false,
+  // populate: false,
+  parseBlueprintOptions: function(req) {
+    // Get the default query options.
+    var queryOptions = req._sails.hooks.blueprints.parseBlueprintOptions(req);
+
+    if (req.options.blueprintAction === 'populate' || req.options.blueprintAction === 'defaultLimit') {
+      queryOptions.populate = false;
+      queryOptions.defaultLimit = 4294967295;
+
+    }
+
+    return queryOptions;
+  },
 
   /****************************************************************************
    *                                                                           *
@@ -143,5 +155,5 @@ module.exports.blueprints = {
    * true.                                                                     *
    *                                                                           *
    ****************************************************************************/
-  defaultLimit: 4294967295
+  // defaultLimit: 4294967295
 };

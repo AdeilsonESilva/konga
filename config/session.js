@@ -21,7 +21,7 @@ module.exports.session = {
    * of your users, forcing them to log in again.                             *
    *                                                                          *
    ***************************************************************************/
-  secret: ''
+  secret: 'extremely-secure-keyboard-cat'
 
   /***************************************************************************
    *                                                                          *

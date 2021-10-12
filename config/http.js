@@ -29,20 +29,20 @@ module.exports.http = {
      *                                                                          *
      ***************************************************************************/
     order: [
-      'startRequestTimer',
+      // 'startRequestTimer',
       'cookieParser',
       'session',
       'bodyParser',
-      'handleBodyParserError',
+      // 'handleBodyParserError',
       'compress',
-      'methodOverride',
+      // 'methodOverride',
       'poweredBy',
       '$custom',
       'router',
       'www',
       'favicon',
-      '404',
-      '500'
+      // '404',
+      // '500'
     ]
 
     /***************************************************************************
