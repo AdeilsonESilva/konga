@@ -134,6 +134,8 @@ module.exports.sockets = {
 
   origins: '*:*',
 
+  onlyAllowOrigins: ['http://localhost:1337'],
+
   // More configuration options for Sails+Socket.io:
   // http://sailsjs.org/#/documentation/reference/sails.config/sails.config.sockets.html
 };

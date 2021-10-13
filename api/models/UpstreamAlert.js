@@ -26,7 +26,7 @@ var defaultModel = _.merge(_.cloneDeep(require('../base/Model')), {
       unique: true
     },
 
-    connection: {
+    datastore: {
       model: 'kongnode',
       required: true
     },

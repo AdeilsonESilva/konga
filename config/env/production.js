@@ -51,9 +51,9 @@ module.exports = {
   // keepResponseErrors : true
 
 
-  sockets:{
-    onlyAllowOrigins: ['http://localhost:1337'],
-  },
+  // sockets:{
+  //   onlyAllowOrigins: ['http://localhost:1337'],
+  // },
 
   datastores: {
     default: {

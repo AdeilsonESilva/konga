@@ -63,6 +63,7 @@
     "validator": "13.6.0"
   },
   "devDependencies": {
+    "@sailshq/upgrade": "^1.0.9",
     "chai": "4.3.4",
     "mocha": "^5.2.0",
     "should": "13.2.3",
@@ -72,7 +73,7 @@
     "postinstall": "bower --allow-root install",
     "start": "node --harmony app.js",
     "production": "node --harmony app.js --prod",
-    "debug": "node debug app.js",
+    "debug": "node inspect app.js",
     "test": "mocha",
     "bower-deps": "bower --allow-root install",
     "debug2": "NODE_ENV=development node --trace-warnings app.js"

@@ -24,6 +24,7 @@ var defaultModel = _.merge(_.cloneDeep(require('../base/Model')), {
   },
   seedData: [
     {
+      id: 1,
       "data": {
         // Default signup enabled to false on new databases
         //  if admins want signup enabled they can switch it on
@@ -110,7 +111,7 @@ var defaultModel = _.merge(_.cloneDeep(require('../base/Model')), {
             update: false,
             delete: false
           },
-          connections: {
+          datastores: {
             create: false,
             read: true,
             update: false,
